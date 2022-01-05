@@ -22,7 +22,6 @@ struct AppCoordinator: View {
                 switch screen {
                 case .homeView:
                     HomeView(pickNumberTapped: showNumbers)
-                    
                 case .numberListView:
                     NumberListView(numberSelected: showNumber, cancel: pop, popToRoot: popToRoot)
                 case .numberDetailView(let number):

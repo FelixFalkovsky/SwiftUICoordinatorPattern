@@ -14,19 +14,28 @@ struct NumberListView: View {
 
     var body: some View {
         VStack {
-            Button(action: cancel) {
-                Text("Go back")
+            HStack(alignment: .center, spacing: 0) {
+                Button(action: cancel) {
+                    Text("Go back")
+                        .font(.headline)
+                }
+                .padding(4)
+                Spacer()
+                Button(action: popToRoot) {
+                    Text("Go back to Root")
+                        .font(.headline)
+                }
+                .padding(4)
             }
-            Button(action: popToRoot) {
-                Text("Go back to Root")
-            }
-            
             List(1 ... 100, id: \.self) { number in
                 Button("\(number)") {
                     numberSelected(number)
                 }
             }
+            .listStyle(.grouped)
         }
+        .edgesIgnoringSafeArea(.bottom)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

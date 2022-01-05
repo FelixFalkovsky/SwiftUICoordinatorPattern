@@ -11,8 +11,14 @@ struct HomeView: View {
     let pickNumberTapped: () -> Void
     var body: some View {
         Button(action: pickNumberTapped) {
-            Text("Pick Number")
+            Text("GO")
+                .bold()
+                .font(.callout)
+                .foregroundColor(.white)
         }
+        .frame(width: UIScreen.main.bounds.width - 16, height: 50, alignment: .center)
+        .background(Color.blue)
+        .cornerRadius(16)
     }
 }
 

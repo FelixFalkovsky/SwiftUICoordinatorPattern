@@ -48,7 +48,9 @@ indirect enum NavigationNode<Screen, ScreenView: View>: View {
                             stack.wrappedValue = Array(stack.wrappedValue.prefix(index + 1))
                         }),
                     label: EmptyView.init
-                ).hidden()
+                )
+                    .hidden()
+                    .animation(.linear)
             )
         } else {
             EmptyView()
